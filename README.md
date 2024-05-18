@@ -68,10 +68,6 @@ To deploy this application, you can use services like Heroku, AWS, or any other 
 
 Contributions are welcome! Please fork this repository and submit a pull request for any enhancements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Acknowledgments
 
 - [Django](https://www.djangoproject.com/)
