@@ -62,6 +62,7 @@ ChatBox is an experimental chat application built with Django and Python. This p
 ## Deployment
 
 To deploy this application, you can use services like Heroku, AWS, or any other platform that supports Django applications. Make sure to configure your ASGI settings and environment variables properly for deployment.
+( NEED TO ADD REDIS )
 
 ## Contributing
 
