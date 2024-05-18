@@ -9,11 +9,11 @@ ChatBox is an experimental chat application built with Django and Python. This p
 - Creating and managing chat rooms
 - User-friendly interface with dynamic updates
 
-# <img width=300 src="assets/login.png" alt="alternative icon"> Login page
+# <img width=300 src="assets/login.jpg" alt="alternative icon"> Login page
 
-# <img width=300 src="assets/home.png" alt="alternative icon"> Home page
+# <img width=300 src="assets/home.jpg" alt="alternative icon"> Home page
 
-# <img width=300 src="assets/room.png" alt="alternative icon"> Room page
+# <img width=300 src="assets/room.jpg" alt="alternative icon"> Room page
 
 
 ## Project Structure
