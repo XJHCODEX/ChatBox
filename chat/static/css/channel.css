@@ -1,0 +1,214 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #36393f; /* Discord's background color */
+    color: #fff; /* Discord's text color */
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  header h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  /* Navigation styles */
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #7289da; /* Discord's link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #fff; /* Hover color */
+  }
+  
+  /* Button styles */
+  button {
+    padding: 8px 16px;
+    background-color: #7289da; /* Discord's button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #677bc4; /* Button hover color */
+  }
+  .settings-dropdown {
+    margin-right: 10px; /* Adjust margin as needed */
+}
+/* Dropdown container */
+.dropdown {
+    position:fixed;
+    top: 20px; /* Adjust top position */
+    right: 20px; /* Adjust right position */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.logout-btn {
+background-color: #f44336; /* Red */
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+text-decoration: none; /* Remove underline */
+position:fixed;
+top: 20px; /* Adjust top position */
+right: 180px; /* Adjust right position */
+}
+body, html {
+height: 100%;
+margin: 0;
+}
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+.widget-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.counter-display {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.modal {
+  display: none;
+}
+
+/* Chat container styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center vertically in viewport */
+  background-color: #36393f; /* Discord's dark theme background color */
+  color: #fff; /* Text color */
+}
+
+/* Chat window styles */
+.chat-window {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  overflow-y: scroll;
+  border: 1px solid #4f545c; /* Discord's border color */
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #2f3136; /* Discord's chat background color */
+}
+/* Customize scrollbar */
+.chat-window::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #2f3136; /* Background color of the track */
+  border-radius: 5px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: #7289da; /* Color of the scrollbar thumb */
+  border-radius: 5px;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+  background: #677bc4; /* Darker shade on hover */
+}
+
+/* Message styles */
+.message {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #40444b; /* Discord's message background color */
+}
+
+/* Input box styles */
+#message-input {
+  width: calc(100% - 70px); /* Adjust for button width and padding */
+  padding: 8px;
+  border: 1px solid #4f545c; /* Discord's border color */
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #40444b; /* Discord's input background color */
+  color: #fff; /* Text color */
+}
+
+/* Submit button styles */
+#send-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #7289da; /* Discord's send button color */
+  color: #fff; /* Text color */
+  cursor: pointer;
+}
+
+/* Hover effect for submit button */
+#send-button:hover {
+  background-color: #677bc4; /* Darker shade on hover */
+}

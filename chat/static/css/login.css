@@ -1,0 +1,83 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff; /* Discord's text color */
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  header h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  /* Navigation styles */
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #7289da; /* Discord's link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #fff; /* Hover color */
+  }
+  
+  /* Button styles */
+  button {
+    padding: 8px 16px;
+    background-color: #7289da; /* Discord's button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #677bc4; /* Button hover color */
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Center the login form */
+.login-container {
+    width: 300px; /* Adjust the width as needed */
+    text-align: center; /* This will center the contents of the container */
+}
+.button {
+    display: inline-block;
+    background-color: #007bff; /* Change the color as needed */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px; /* Adjust the spacing from the login button */
+}
