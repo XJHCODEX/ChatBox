@@ -53,23 +53,6 @@ def home(request):
         return render(request, 'chat/home.html', {'channels': []})  # Render an empty home page for non-logged-in users
 
 @login_required
-def create_channel(request):
-    if request.method == 'POST':
-        form = ChannelForm(request.POST)
-        if form.is_valid():
-            # Save the channel to the database
-            channel = form.save(commit=False)  # Don't commit yet to customize additional fields if needed
-            # Customize additional fields if needed
-            channel.save()  # Commit the changes to the database
-            return redirect('channel_list') 
-        # Handle form submission and create a new channel
-        # Example: channel = Channel.objects.create(name=request.POST['channel_name'])
-        # return redirect('home')  # Redirect to home page after creating the channel
-    else:
-        form = ChannelForm()
-    return render(request, 'chat/create_channel.html')
-
-@login_required
 def send_message(request, channel_id):
     if request.method == 'POST':
         # Handle form submission and send a message to the specified channel
@@ -88,30 +71,8 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
-
-def channel_list(request):
-    channels = Channel.objects.all()
-    form = ChannelForm()
-    if request.method == 'POST':
-        form = ChannelForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('channel_list')
-    return render(request, 'chat/create_channel.html', {'channels': channels, 'form': form})
-
-def channel_detail(request, channel_id):
-    channel = Channel.objects.get(id=channel_id)
-    return render(request, 'channel_detail.html', {'channel': channel})
-
-def delete_channel(request, channel_id):
-    channel = Channel.objects.get(id=channel_id)
-    if request.method == 'POST':
-        channel.delete()
-        return redirect('home')
-    return render(request, 'channels/delete_channel.html', {'channel': channel})
-
 def index_view(request):
-    return render(request, 'index.html', {
+    return render(request, 'chat/home.html', {
         'rooms': Room.objects.all(),
     })
 
