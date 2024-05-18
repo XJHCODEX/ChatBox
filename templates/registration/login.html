@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"> <!-- My CSS FILE -->
+    <style>
+        #loginBody {
+            background-image: url("{% static 'css/backgrounds/loginBG11.png' %}");  /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;  /* Adjust the background size as needed */
+            background-position: center;  /* Adjust the background position as needed */
+            /* Add other background properties if required */
+            }
+    </style>
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</head>
+<body id="loginBody">
+    <div class="login-container">
+    <h1>Login</h1>
+    {% if messages %}
+    <script>
+        window.onload = function() {
+            showAlert('{{ messages }}');
+        };
+    </script>
+    {% endif %}
+    <form method="post" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit" class = "button">Login</button>
+    </form>
+    <!-- Add a "Register" button linking to the registration page -->
+    <a href="{% url 'register' %}">
+        <button class = "button">Register</button>
+    </a>
+    </div>
+</body>
+</html>

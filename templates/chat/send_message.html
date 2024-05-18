@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- My CSS FILE -->
+</head>
+<body>
+    <h1>Send Message to Channel</h1>
+    <form method="post" action="{% url 'send_message' channel_id %}">
+        {% csrf_token %}
+        <label for="message_content">Message:</label>
+        <textarea id="message_content" name="message_content" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>

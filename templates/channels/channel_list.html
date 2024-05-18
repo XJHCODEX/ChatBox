@@ -1,0 +1,81 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Channels</h2>
+        <ul id="channel-list">
+            {% for channel in channels %}
+                <li id="channel-{{ channel.id }}">
+                    {{ channel.name }}
+                    <form method="post" action="{% url 'delete_channel' channel.id %}" class="delete-channel-form" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <h3>Create New Channel</h3>
+        <form id="channel-form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Channel</button>
+        </form>
+    </div>
+    <div class="content">
+        <!-- Your main content goes here -->
+        <h1>Welcome to the Home Page</h1>
+        <p>Here is your main content.</p>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#channel-form').on('submit', function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: "{% url 'home' %}",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(data) {
+                        $('#channel-list').append(
+                            `<li id="channel-${data.id}">
+                                ${data.name}
+                                <form method="post" action="{% url 'delete_channel' ${data.id} %}" class="delete-channel-form" style="display:inline;">
+                                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </li>`
+                        );
+                        $('#channel-form')[0].reset();
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+            });
+
+            $(document).on('submit', '.delete-channel-form', function(event) {
+                event.preventDefault();
+                const form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    type: "POST",
+                    data: form.serialize(),
+                    success: function() {
+                        form.closest('li').remove();
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

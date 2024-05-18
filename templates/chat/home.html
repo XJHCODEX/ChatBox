@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #homeBody {
+            background-image: url("{% static 'css/backgrounds/loginBG11.png' %}");  /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;  /* Adjust the background size as needed */
+            background-position: center;  /* Adjust the background position as needed */
+            /* Add other background properties if required */
+            }
+    </style>
+</head> 
+<body id="homeBody">
+    <h1>ChatBox</h1>
+    <!-- Logout Button -->
+    <div class="dropdown-container">
+        <div class="settings-dropdown dropdown">
+            <button class="dropbtn">Settings</button>
+            <div class="dropdown-content">
+                <form method="post" action="{% url 'user_logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            </div>     
+        </div>
+        <!-- create channel js file -->
+        <!--
+        <div>
+            <script src="{% static 'js/createchannel.js' %}"></script>
+        </div>
+        -->
+    </div>
+
+<!-- channels chat -->
+    <div class="container mt-3 p-5">
+        <div class = "border-container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="mb-2">
+                        <label for="roomInput">Enter a room name to connect to it:</label>
+                        <input type="text" class="form-control" id="roomInput" placeholder="Room name">
+                        <small id="roomInputHelp" class="form-text text-muted">If the room doesn't exist yet, it will be created for you.</small>
+                    </div>
+                    <button type="button" id="roomConnect" class="btn btn-success">Connect</button>
+                    <label for="roomSelect">Select an existing room:</label>
+                    <select id="roomSelect" class="form-control">
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+
+<!-- end of channels chat -->
+    <div class="chat-container">
+        <div class="chat-window" id="chat-window"></div>
+        <form id="form">
+            <input type="text" id="message-input" name="message" placeholder="Type your message...">
+            <button type="submit" id="send-button">Send</button>
+        </form>
+    </div>
+    <div id = "messages"></div>
+        <div>
+            <script src="{% static 'js/chatbox.js' %}"></script>
+            <script>
+                const loggedInUser = "{{ request.user.username|escapejs }}";
+                console.log('Logged-in User:', loggedInUser);
+            </script>
+        </div>
+</body>
+</html>
