@@ -71,4 +71,3 @@ Contributions are welcome! Please fork this repository and submit a pull request
 ## Acknowledgments
 
 - [Django](https://www.djangoproject.com/)
-- [Django Channels](https://channels.readthedocs.io/en/stable/)
