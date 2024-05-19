@@ -9,6 +9,7 @@ ChatBox is an experimental chat application built with Django and Python. This p
 - Real-time messaging using WebSocket
 - Creating and managing chat rooms
 - User-friendly interface with dynamic updates
+- ( need to include better security ) 
 
 ## Login page
 <img width=300 src="assets/login.jpg" alt="alternative icon">
