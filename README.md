@@ -1,6 +1,6 @@
 # ChatBox
 
-ChatBox is an experimental chat application built with Django and Python. This project is designed to demonstrate the implementation of real-time communication features using Django Channels.
+This is an experimental chat application built with Django and Python. This project is designed to demonstrate the implementation of real-time communication features using Django Channels.
 (CHECK REQUIREMENTS.TXT FOR REQUIRED LIBRARIES)
 
 ## Features
