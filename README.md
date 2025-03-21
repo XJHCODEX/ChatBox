@@ -3,7 +3,7 @@
 This is an experimental chat application built with Django and Python. This project is designed to demonstrate the implementation of real-time communication features using Django Channels.
 (CHECK REQUIREMENTS.TXT FOR REQUIRED LIBRARIES)
 
-## Features
+## Features 
 
 - User authentication (login/logout)
 - Real-time messaging using WebSocket
